@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "axios": "^1.7.9",
+    "csv-parser": "^3.1.0",
+    "docx": "^9.1.1",
+    "docxtemplater": "^3.57.2",
+    "dotenv": "^17.2.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "pizzip": "^3.1.7",
+    "streamifier": "^0.1.1"
+  }
+}

@@ -13,19 +13,20 @@ const fetchCsvData = async (sheetURL) => {
                 const cleanedRow = {};
                 Object.keys(row).forEach(key => {
                     const cleanedKey = key.replace(/[\r\n]+/g, ' ').trim();
+                    // console.log('Cleaned Key:', cleanedKey);
                     cleanedRow[cleanedKey] = row[key];
                 });
 
                 // Customize as per the needed columns
                 const selectedData = {
-                    firstName: cleanedRow['Student First Name  - Nombre de Pila del Estudiante Aryan'], 
-                    lastName: cleanedRow['Student Last Name - Apellido del Estudiante'],
-                    grade: cleanedRow['Grade - Grado'],
-                    artCategory: cleanedRow['Arts Category (choose one) - Categoría Artística (Marcar solo una)'].split(' - ')[0],
-                    awardArtCategory: cleanedRow['Arts Category'],
-                    awardType: cleanedRow['Award Type'],
+                    fullName: cleanedRow['Name'], 
+                    grade: cleanedRow['Grade'],
+                    awardType: cleanedRow['Award'],
+                    artCategory: cleanedRow['Category'],
+                    school: cleanedRow['School'],
                     // You can add more columns as needed
                 };
+                // console.log('Selected Data:', selectedData);
                 data.push(selectedData);
             })
             .on('end', () => {
